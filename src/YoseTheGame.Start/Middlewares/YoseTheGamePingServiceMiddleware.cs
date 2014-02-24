@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.Owin;
 using Newtonsoft.Json;
 
@@ -13,8 +14,12 @@ namespace YoseTheGame.Start.Middlewares
 
         public override Task Invoke(IOwinContext context)
         {
-            if (context.Request.Path.Value != "/ping") 
+            if (!context.Request.Path.Value.Equals(
+                "/ping",
+                StringComparison.InvariantCultureIgnoreCase))
+            {
                 return Next.Invoke(context);
+            }
 
             var data = new
             {
