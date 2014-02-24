@@ -4,5 +4,8 @@
     <Imports>
       <Import moduleName="Diagnostics" />
     </Imports>
+    <Endpoints>
+      <InputEndpoint name="YoseEndpoint" protocol="http" port="80" />
+    </Endpoints>
   </WorkerRole>
 </ServiceDefinition>

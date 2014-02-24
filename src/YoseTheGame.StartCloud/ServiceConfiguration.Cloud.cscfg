@@ -3,7 +3,7 @@
   <Role name="YoseTheGame.StartRole">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=yosethegame;AccountKey=Di8qZ3aqisyFvpOVJz/+3yHUL2zcGl0KTPrmnfFLlEmAQv63D+Lz0Wy85RXnaktjifdF9MD9Q3k2v6ZVecW+3w==" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>

@@ -13,7 +13,8 @@
             WriteLiteral("\n\r</head>");
             WriteLiteral("\n\r<body>");
             WriteLiteral("\n\r<p>Hello Yose");
-            WriteLiteral("\n\r<p>YoseTheGame practice using Katana + Azure</p><a href=\"https://github.com/lurumad/yosethegame\">Github repository</a>");
+            WriteLiteral("\n\r<p>YoseTheGame practice using Katana + Azure</p>");
+            WriteLiteral("\r\n<a id=\"repository-link\" href=\"https://github.com/lurumad/yosethegame\">Github repository</a>");
             WriteLiteral("\n\r</body>");
             WriteLiteral("\n\r</html>");
         }
