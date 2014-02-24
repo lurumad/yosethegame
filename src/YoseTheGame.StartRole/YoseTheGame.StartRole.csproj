@@ -86,7 +86,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\YoseTheGame.Start\YoseTheGame.Start.csproj">
+    <ProjectReference Include="..\YoseTheGame.Start\YoseTheGame.Start.csproj">
       <Project>{860cae41-062d-4066-9f88-b694f6c5edb1}</Project>
       <Name>YoseTheGame.Start</Name>
     </ProjectReference>

@@ -3,11 +3,6 @@
   <WorkerRole name="YoseTheGame.StartRole" vmsize="Small">
     <Imports>
       <Import moduleName="Diagnostics" />
-      <Import moduleName="RemoteAccess" />
-      <Import moduleName="RemoteForwarder" />
     </Imports>
-    <Endpoints>
-      <InputEndpoint name="YoseEndpoint" protocol="http" port="80" />
-    </Endpoints>
   </WorkerRole>
 </ServiceDefinition>

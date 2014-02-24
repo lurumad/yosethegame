@@ -37,16 +37,6 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\YoseTheGame.StartRole\YoseTheGame.StartRole.csproj">
-      <Name>YoseTheGame.StartRole</Name>
-      <Project>{a803164b-b66a-4973-8d6e-1bd00973d24d}</Project>
-      <Private>True</Private>
-      <RoleType>Worker</RoleType>
-      <RoleName>YoseTheGame.StartRole</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Profiles" />
     <Folder Include="YoseTheGame.StartRoleContent\" />
   </ItemGroup>
@@ -57,6 +47,16 @@
   </ItemGroup>
   <ItemGroup>
     <PublishProfile Include="Profiles\yosethegameProduction.azurePubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YoseTheGame.StartRole\YoseTheGame.StartRole.csproj">
+      <Name>YoseTheGame.StartRole</Name>
+      <Project>{a803164b-b66a-4973-8d6e-1bd00973d24d}</Project>
+      <Private>True</Private>
+      <RoleType>Worker</RoleType>
+      <RoleName>YoseTheGame.StartRole</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

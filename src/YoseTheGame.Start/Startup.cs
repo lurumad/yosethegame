@@ -17,7 +17,7 @@ namespace YoseTheGame.Start
                 }
 
                 context.Response.ContentType = "text/html";
-                return context.Response.WriteAsync("Hello Yose");
+                return context.Response.WriteAsync("Hello Yose <a href=\"https://github.com/lurumad/yosethegame\">Github repo</a>");
             });
         }
     }

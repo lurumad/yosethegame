@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoseTheGame.Start", "src\Yo
 EndProject
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "YoseTheGame.StartCloud", "src\YoseTheGame.StartCloud\YoseTheGame.StartCloud.ccproj", "{CDC0F065-0B06-436C-9DBE-E13D5BC972AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoseTheGame.StartRole", "YoseTheGame.StartRole\YoseTheGame.StartRole.csproj", "{A803164B-B66A-4973-8D6E-1BD00973D24D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoseTheGame.StartRole", "src\YoseTheGame.StartRole\YoseTheGame.StartRole.csproj", "{A803164B-B66A-4973-8D6E-1BD00973D24D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
