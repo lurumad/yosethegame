@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using Owin;
+﻿using Owin;
+using YoseTheGame.Start.Extensions;
 
 namespace YoseTheGame.Start
 {
@@ -7,18 +7,8 @@ namespace YoseTheGame.Start
     {
         public void Configuration(IAppBuilder app)
         {
-            app.Run(context =>
-            {
-                if (context.Request.Path.Value == "/ping")
-                {
-                    var jsonAlive = new {alive = true};
-                    context.Response.ContentType = "application/json";
-                    return context.Response.WriteAsync(JsonConvert.SerializeObject(jsonAlive));
-                }
-
-                context.Response.ContentType = "text/html";
-                return context.Response.WriteAsync("Hello Yose <a href=\"https://github.com/lurumad/yosethegame\">Github repo</a>");
-            });
+            app.UseYoseTheGamePingService();
+            app.UseYoseTheGamePage();
         }
     }
 }
