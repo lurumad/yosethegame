@@ -12,7 +12,7 @@ namespace YoseTheGame.Start.Middlewares
 
         public override Task Invoke(IOwinContext context)
         {
-            var page = new YoseTheGamePage();
+            var page = new YoseTheGameHomePage();
             page.Execute(context);
 
             return Next.Invoke(context);

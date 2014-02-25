@@ -62,7 +62,7 @@
     <Compile Include="Middlewares\YoseTheGamePingServiceMiddleware.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Views\YoseTheGamePage.cs" />
+    <Compile Include="Views\YoseTheGameHomePage.cs" />
     <Compile Include="Extensions\YoseTheGameExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
