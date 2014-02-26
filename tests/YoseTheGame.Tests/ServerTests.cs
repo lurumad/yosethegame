@@ -4,12 +4,12 @@ using FluentAssertions;
 using Microsoft.Owin.Hosting;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
-using YoseTheGame.Start;
+using YoseTheGame.Server;
 
 namespace YoseTheGame.Tests
 {
     [TestFixture]
-    public class StartTests
+    public class ServerTests
     {
         private const string YoseServerUrl = "http://127.0.0.1:8080";
         private TestContext _testContext;

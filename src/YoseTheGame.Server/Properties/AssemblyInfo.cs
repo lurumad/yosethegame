@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("YoseTheGame.Start")]
+[assembly: AssemblyTitle("YoseTheGame.Server")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("YoseTheGame.Start")]
+[assembly: AssemblyProduct("YoseTheGame.Server")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("74397a53-dc00-4c4b-b882-1ebecca8d2fe")]
+[assembly: Guid("a6fe7989-58f1-495b-83c4-10958996158e")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -5,13 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2.2</ProductVersion>
-    <ProjectGuid>cdc0f065-0b06-436c-9dbe-e13d5bc972ac</ProjectGuid>
+    <ProjectGuid>ec84931b-86a3-424d-b3de-1f8a09834382</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>YoseTheGame.StartCloud</RootNamespace>
-    <AssemblyName>YoseTheGame.StartCloud</AssemblyName>
+    <RootNamespace>YoseTheGame.Azure</RootNamespace>
+    <AssemblyName>YoseTheGame.Azure</AssemblyName>
     <StartDevelopmentStorage>True</StartDevelopmentStorage>
-    <Name>YoseTheGame.StartCloud</Name>
+    <Name>YoseTheGame.Azure</Name>
+    <PackageEnableRemoteDebugger>False</PackageEnableRemoteDebugger>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,26 +38,26 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Profiles" />
-    <Folder Include="YoseTheGame.StartRoleContent\" />
+    <ProjectReference Include="..\YoseTheGame.ServerRole\YoseTheGame.ServerRole.csproj">
+      <Name>YoseTheGame.ServerRole</Name>
+      <Project>{aa74134e-f014-4452-a3ac-51e92ec2aeb6}</Project>
+      <Private>True</Private>
+      <RoleType>Worker</RoleType>
+      <RoleName>YoseTheGame.ServerRole</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="YoseTheGame.StartRoleContent\diagnostics.wadcfg">
+    <Folder Include="Profiles" />
+    <Folder Include="YoseTheGame.ServerRoleContent\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="YoseTheGame.ServerRoleContent\diagnostics.wadcfg">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <PublishProfile Include="Profiles\yosethegameProduction.azurePubxml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\YoseTheGame.StartRole\YoseTheGame.StartRole.csproj">
-      <Name>YoseTheGame.StartRole</Name>
-      <Project>{a803164b-b66a-4973-8d6e-1bd00973d24d}</Project>
-      <Private>True</Private>
-      <RoleType>Worker</RoleType>
-      <RoleName>YoseTheGame.StartRole</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
-    </ProjectReference>
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

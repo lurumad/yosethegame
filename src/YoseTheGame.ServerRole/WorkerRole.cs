@@ -4,9 +4,9 @@ using System.Net;
 using System.Threading;
 using Microsoft.Owin.Hosting;
 using Microsoft.WindowsAzure.ServiceRuntime;
-using YoseTheGame.Start;
+using YoseTheGame.Server;
 
-namespace YoseTheGame.StartRole
+namespace YoseTheGame.ServerRole
 {
     public class WorkerRole : RoleEntryPoint
     {

@@ -5,11 +5,11 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoseTheGame.Tests", "tests\YoseTheGame.Tests\YoseTheGame.Tests.csproj", "{1D5E4D8F-074C-4900-9E79-344249B28906}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoseTheGame.Start", "src\YoseTheGame.Start\YoseTheGame.Start.csproj", "{860CAE41-062D-4066-9F88-B694F6C5EDB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoseTheGame.Server", "src\YoseTheGame.Server\YoseTheGame.Server.csproj", "{CC0E72E9-C814-4D36-AA2B-DA7C886D9364}"
 EndProject
-Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "YoseTheGame.StartCloud", "src\YoseTheGame.StartCloud\YoseTheGame.StartCloud.ccproj", "{CDC0F065-0B06-436C-9DBE-E13D5BC972AC}"
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "YoseTheGame.Azure", "src\YoseTheGame.Azure\YoseTheGame.Azure.ccproj", "{EC84931B-86A3-424D-B3DE-1F8A09834382}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoseTheGame.StartRole", "src\YoseTheGame.StartRole\YoseTheGame.StartRole.csproj", "{A803164B-B66A-4973-8D6E-1BD00973D24D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoseTheGame.ServerRole", "src\YoseTheGame.ServerRole\YoseTheGame.ServerRole.csproj", "{AA74134E-F014-4452-A3AC-51E92EC2AEB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,18 @@ Global
 		{1D5E4D8F-074C-4900-9E79-344249B28906}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D5E4D8F-074C-4900-9E79-344249B28906}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D5E4D8F-074C-4900-9E79-344249B28906}.Release|Any CPU.Build.0 = Release|Any CPU
-		{860CAE41-062D-4066-9F88-B694F6C5EDB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{860CAE41-062D-4066-9F88-B694F6C5EDB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{860CAE41-062D-4066-9F88-B694F6C5EDB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{860CAE41-062D-4066-9F88-B694F6C5EDB1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CDC0F065-0B06-436C-9DBE-E13D5BC972AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CDC0F065-0B06-436C-9DBE-E13D5BC972AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CDC0F065-0B06-436C-9DBE-E13D5BC972AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CDC0F065-0B06-436C-9DBE-E13D5BC972AC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A803164B-B66A-4973-8D6E-1BD00973D24D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A803164B-B66A-4973-8D6E-1BD00973D24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A803164B-B66A-4973-8D6E-1BD00973D24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A803164B-B66A-4973-8D6E-1BD00973D24D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC0E72E9-C814-4D36-AA2B-DA7C886D9364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC0E72E9-C814-4D36-AA2B-DA7C886D9364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC0E72E9-C814-4D36-AA2B-DA7C886D9364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC0E72E9-C814-4D36-AA2B-DA7C886D9364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC84931B-86A3-424D-B3DE-1F8A09834382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC84931B-86A3-424D-B3DE-1F8A09834382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC84931B-86A3-424D-B3DE-1F8A09834382}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC84931B-86A3-424D-B3DE-1F8A09834382}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA74134E-F014-4452-A3AC-51E92EC2AEB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA74134E-F014-4452-A3AC-51E92EC2AEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA74134E-F014-4452-A3AC-51E92EC2AEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA74134E-F014-4452-A3AC-51E92EC2AEB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

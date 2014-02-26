@@ -110,3 +110,7 @@ UpgradeLog*.XML
 =======
 UpgradeLog*.XML
 >>>>>>> bd4823a979c57da64dd08e92fc28db59bb6b5613
+
+profiles
+*.cscfg
+*.csdef
