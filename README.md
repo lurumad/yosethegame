@@ -1,3 +1,3 @@
 YoseTheGame
 ===========
-C# + OWIN + Katana + NUnit + Azure
+YoseTheGame practice using Katana + Nancyfx + Razor view engine
