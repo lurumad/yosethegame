@@ -1,5 +1,7 @@
-﻿using Nancy;
+﻿using System.Linq;
+using Nancy;
 using Nancy.Responses;
+using Nancy.Routing;
 
 namespace YoseTheGame.Server.Modules
 {
@@ -9,12 +11,15 @@ namespace YoseTheGame.Server.Modules
         {
             Get["/"] = _ => View["Index"];
 
-            Get["/ping"] = _ => new JsonResponse(
-                new Model.Ping
-                {
-                    Alive = true
-                }, 
-                new DefaultJsonSerializer());
+            Get["/ping"] = _ => 
+                new JsonResponse(
+                    new { alive = true }, 
+                    new DefaultJsonSerializer());
+
+            Get["/primeFactors"] = parameters =>
+            {
+
+            };   
         }
     }
 }

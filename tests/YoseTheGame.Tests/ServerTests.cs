@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.Net.Http;
 using FluentAssertions;
 using Microsoft.Owin.Hosting;
+using Nancy.Helpers;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using YoseTheGame.Server;
@@ -46,6 +48,24 @@ namespace YoseTheGame.Tests
             var data = JObject.Parse(response);
 
             data.Value<bool>("alive").Should().BeTrue();
+        }
+
+        [Test]
+        public async void Your_server_receive_a_power_of_2_as_parameter_and_should_respond_a_JSON_containing_the_decomposition_of_this_number()
+        {
+            const int powerOfTwoNumber = 16;
+            var uriBuilder = new UriBuilder(YoseServerUrl + "/primeFactors");
+            var query = HttpUtility.ParseQueryString(uriBuilder.Query);
+            query["number"] = powerOfTwoNumber.ToString();
+            uriBuilder.Query = query.ToString();
+
+            var response =
+                await _testContext.HttpClient.GetStringAsync(uriBuilder.ToString());
+
+            var data = JObject.Parse(response);
+
+            data.Value<int>("number").Should().Be(powerOfTwoNumber);
+            data.Value<JArray>("decomposition").Count.Should().Be(4);
         }
 
         public class TestContext : IDisposable
