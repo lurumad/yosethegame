@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using FluentAssertions;
@@ -54,10 +55,9 @@ namespace YoseTheGame.Tests
         public async void Your_server_receive_a_power_of_2_as_parameter_and_should_respond_a_JSON_containing_the_decomposition_of_this_number()
         {
             const int powerOfTwoNumber = 16;
-            var uriBuilder = new UriBuilder(YoseServerUrl + "/primeFactors");
-            var query = HttpUtility.ParseQueryString(uriBuilder.Query);
-            query["number"] = powerOfTwoNumber.ToString();
-            uriBuilder.Query = query.ToString();
+            var uriBuilder = _testContext.BuildUriBuilder(
+                YoseServerUrl + "/primeFactors",
+                powerOfTwoNumber);
 
             var response =
                 await _testContext.HttpClient.GetStringAsync(uriBuilder.ToString());
@@ -66,6 +66,55 @@ namespace YoseTheGame.Tests
 
             data.Value<int>("number").Should().Be(powerOfTwoNumber);
             data.Value<JArray>("decomposition").Count.Should().Be(4);
+        }
+
+        [Test]
+        public async void Your_server_receive_a_string_as_a_parameter_and_should_respond_a_JSON_containing_not_a_number_message()
+        {
+            const string message = "hello";
+            var uriBuilder = _testContext.BuildUriBuilder(
+                YoseServerUrl + "/primeFactors", 
+                message);
+
+            var response =
+                await _testContext.HttpClient.GetStringAsync(uriBuilder.ToString());
+
+            var data = JObject.Parse(response);
+
+            data.Value<string>("error").Should().Be("not a number");
+        }
+
+        [Test]
+        public async void Your_server_receive_a_positive_integer_number_as_a_parameter_and_should_respond_a_JSON_containing_the_prime_factors_decomposition_of_this_number()
+        {
+            const int number = 300;
+            var uriBuilder = _testContext.BuildUriBuilder(
+                YoseServerUrl + "/primeFactors",
+                number);
+
+            var response =
+                await _testContext.HttpClient.GetStringAsync(uriBuilder.ToString());
+
+            var data = JObject.Parse(response);
+
+            data.Value<JArray>("decomposition").Count.Should().Be(5);
+            data.Value<JArray>("decomposition").Values<int>().Should().BeEquivalentTo(new List<int> {2,2,3,5,5});
+        }
+
+        [Test]
+        public async void Your_server_receive_a_positive_integer_number_as_a_parameter_and_should_respond_a_JSON_containing_error_message_when_the_number_is_actually_greater_than_1e6()
+        {
+            const int number = 1000001;
+            var uriBuilder = _testContext.BuildUriBuilder(
+                YoseServerUrl + "/primeFactors",
+                number);
+
+            var response =
+                await _testContext.HttpClient.GetStringAsync(uriBuilder.ToString());
+
+            var data = JObject.Parse(response);
+
+            data.Value<string>("error").Should().Be("too big number (>1e6)");
         }
 
         public class TestContext : IDisposable
@@ -85,6 +134,16 @@ namespace YoseTheGame.Tests
             }
 
             public HttpClient HttpClient { get; set; }
+
+            public UriBuilder BuildUriBuilder<T>(string url, T value)
+            {
+                var uriBuilder = new UriBuilder(url);
+                var query = HttpUtility.ParseQueryString(uriBuilder.Query);
+                query["number"] = value.ToString();
+                uriBuilder.Query = query.ToString();
+
+                return uriBuilder;
+            }
 
             public void Dispose()
             {
