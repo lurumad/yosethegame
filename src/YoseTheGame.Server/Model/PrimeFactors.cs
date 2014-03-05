@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace YoseTheGame.Server.Model
 {
     public class PrimeFactors
     {
         private const int BigNumberAllow = 100000;
-
-        public bool IsValidNumber(string number)
-        {
-            int result;
-            return int.TryParse(number, out result);
-        }
 
         public bool IsBigNumber(int number)
         {
